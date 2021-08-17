@@ -1,5 +1,5 @@
 export default {
-  url: 'https://strapi-landing-pages-project-2.herokuapp.com/pages/?slug=',
-  siteName: 'Otávio Miranda',
+  url: 'http://localhost:1337/pages?slug=',
+  siteName: 'LandingPage Api',
   defaultSlug: 'landing-page',
 };
