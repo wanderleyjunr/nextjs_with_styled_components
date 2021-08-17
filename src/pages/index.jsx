@@ -4,14 +4,18 @@ import config from '../config';
 import { mapData } from '../api/map-data';
 
 import Home from '../templates/Home';
+import { loadPages } from '../api/load-pages';
 export default function Index({ data }) {
   return <Home data={data} />;
 }
 
 export const getStaticProps = async () => {
-  const raw = await fetch(config.url + config.defaultSlug);
-  const json = await raw.json();
-  const data = mapData(json);
+  let data;
+  try {
+    data = await loadPages(config.defaultSlug);
+  } catch (e) {
+    //
+  }
   return {
     props: {
       data,
